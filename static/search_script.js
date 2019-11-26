@@ -18,9 +18,15 @@ elemInput.oninput = function() {
   elemInput.onkeypress = function(e){
     if(e.keyCode==13){
       console.log('enter');
+      query = elemInput.value;
+      /*query.split(' ').forEach(function(e){
+        if(e.length>5){
+          console.log(e);
+        }
+      });*/
+      //window.location.replace("https://www.legislation.gov.uk/all?text=strike");
+      location.href = '/search?q="'+query+'"';
     }
-    // Simulate an HTTP redirect:
-    window.location.replace("/");
   };
 
 
